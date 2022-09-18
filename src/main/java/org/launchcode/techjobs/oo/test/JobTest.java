@@ -23,5 +23,9 @@ public class JobTest {
         assertNotEquals(jobTest1.getId(), jobTest2.getId());
     }
 
+    @Test
+    public void testJobConstructorSetsAllFields(){
+        Job jobTestConstructor = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
+    }
 }
