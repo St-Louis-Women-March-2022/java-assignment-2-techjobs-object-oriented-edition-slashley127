@@ -96,4 +96,8 @@ public class Job {
     public int getId() {
         return id;
     }
+
+    public String toString(Job job){
+        for()
+    }
 }
