@@ -100,6 +100,22 @@ public class Job {
 
     public static String toString(Job job) {
 
-        return "\n ID: " + job.getId() + "\n Name: " + job.getName() + "\n Employer: " + job.getEmployer() + "\n Location: " + job.getLocation() + "\n Position Type: " + job.getPositionType() + "\n Core Competency: " + job.getCoreCompetency() + "\n";
+        ArrayList<Object> jobValues = new ArrayList<>();
+        jobValues.add(job.getName());
+        jobValues.add(job.getEmployer());
+        jobValues.add(job.getLocation());
+        jobValues.add(job.getPositionType());
+        jobValues.add(job.getCoreCompetency());
+
+        String returnString;
+
+        for (Object value : jobValues) {
+            if (value == null || value == "") {
+                String valueString = value.toString();
+                valueString = "Data not available";
+            }
+        }
+        return "\nID: " + job.getId() + "\nName: " + job.getName() + "\nEmployer: " + job.getEmployer() + "\nLocation: " + job.getLocation() + "\nPosition Type: " + job.getPositionType() + "\nCore Competency: " + job.getCoreCompetency() + "\n";
     }
+
 }
