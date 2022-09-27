@@ -1,5 +1,6 @@
 package org.launchcode.techjobs.oo;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class Job {
@@ -97,7 +98,8 @@ public class Job {
         return id;
     }
 
-    public String toString(Job job){
-        for()
+    public static String toString(Job job) {
+
+        return "\n ID: " + job.getId() + "\n Name: " + job.getName() + "\n Employer: " + job.getEmployer() + "\n Location: " + job.getLocation() + "\n Position Type: " + job.getPositionType() + "\n Core Competency: " + job.getCoreCompetency() + "\n";
     }
 }
