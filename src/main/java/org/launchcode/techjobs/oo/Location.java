@@ -18,14 +18,18 @@ public class Location {
 
     public Location(String value) {
         this();
-        this.value=value;
+        this.value = value;
     }
+
 
     // Custom toString, equals, and hashCode methods:
 
     @Override
     public String toString() {
-        return value;
+        if(this.value == ""){
+            return "\nLocation: Data not available";
+        }
+        return "\nLocation: " + value;
     }
 
     @Override
@@ -48,6 +52,7 @@ public class Location {
     }
 
     public String getValue() {
+        this.value = value;
         return value;
     }
 

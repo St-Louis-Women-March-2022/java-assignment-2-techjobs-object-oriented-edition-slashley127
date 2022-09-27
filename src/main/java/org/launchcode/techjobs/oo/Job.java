@@ -55,7 +55,10 @@ public class Job {
 
 
     public String getName() {
-        return name;
+        if(this.name == ""){
+            this.name = "Data not available";
+        }
+        return "\nName: " + this.name;
     }
 
     public void setName(String name) {
@@ -98,24 +101,9 @@ public class Job {
         return id;
     }
 
-    public static String toString(Job job) {
+    public String toString() {
 
-        ArrayList<Object> jobValues = new ArrayList<>();
-        jobValues.add(job.getName());
-        jobValues.add(job.getEmployer());
-        jobValues.add(job.getLocation());
-        jobValues.add(job.getPositionType());
-        jobValues.add(job.getCoreCompetency());
-
-        String returnString;
-
-        for (Object value : jobValues) {
-            if (value == null || value == "") {
-                String valueString = value.toString();
-                valueString = "Data not available";
-            }
-        }
-        return "\nID: " + job.getId() + "\nName: " + job.getName() + "\nEmployer: " + job.getEmployer() + "\nLocation: " + job.getLocation() + "\nPosition Type: " + job.getPositionType() + "\nCore Competency: " + job.getCoreCompetency() + "\n";
+        return "\nID: " + this.getId() + this.getName() + this.getEmployer() + this.getLocation() + this.getPositionType() + this.getCoreCompetency() + "\n";
     }
 
 }

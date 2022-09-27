@@ -54,33 +54,25 @@ public class JobTest {
     public void testToStringStartsAndEndsWithNewLine(){
         Job jobTest1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-        String jobTest1String = Job.toString(jobTest1);
-        Character jobTest1NewLineStart = jobTest1String.charAt(0);
-        Character jobTest1NewLineEnd = jobTest1String.charAt(jobTest1String.length()-1);
+        String jobTest1String = jobTest1.toString();
 
-        assertEquals(jobTest1NewLineStart.toString(), "\n" );
-        assertEquals(jobTest1NewLineEnd.toString(), "\n");
+        assertEquals(jobTest1String.charAt(0), '\n' );
+        assertEquals(jobTest1String.charAt(jobTest1String.length()-1), '\n');
     }
 
     @Test
     public void testToStringContainsCorrectLabelsAndData(){
         Job jobTest1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-        String jobTest1String = Job.toString(jobTest1);
+        assertEquals(jobTest1.toString(), "\nID: " + jobTest1.getId() + jobTest1.getName() + jobTest1.getEmployer() + jobTest1.getLocation() + jobTest1.getPositionType() + jobTest1.getCoreCompetency() + "\n");
 
-        assertEquals(jobTest1String, "\n ID: 1\n Name: Product tester\n Employer: ACME\n Location: Desert\n Position Type: Quality control\n Core Competency: Persistence\n");
     }
 
     @Test
     public void testToStringHandlesEmptyField(){
-        Job jobTest1WithEmptyName = new Job("", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job jobTest1WithEmptyFields = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
 
-        String jobTest1WithEmptyNameString = Job.toString(jobTest1WithEmptyName);
-
-        assertEquals(jobTest1WithEmptyNameString, "\nID: 1\nName: Data not available\nEmployer: ACME\nLocation: Desert\nPosition Type: Quality control\nCore Competency: Persistence\n");
-
-
+        assertEquals(jobTest1WithEmptyFields.toString(), "\nID: " + jobTest1WithEmptyFields.getId() + "\nName: Data not available\nEmployer: Data not available\nLocation: Data not available\nPosition Type: Data not available\nCore Competency: Data not available\n");
     }
-
 
 }
