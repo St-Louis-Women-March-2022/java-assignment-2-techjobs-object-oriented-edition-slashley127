@@ -36,9 +36,9 @@ public class CoreCompetency {
     @Override
     public String toString() {
         if(this.value == ""){
-            return "\nCore Competency: Data not available";
+            return "Data not available";
         }
-        return "\nCore Competency: " + value;
+        return value;
     }
 
     @Override

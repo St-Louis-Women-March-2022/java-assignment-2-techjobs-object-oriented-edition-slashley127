@@ -23,9 +23,9 @@ public class Employer {
     @Override
     public String toString() {
         if(this.value == ""){
-            return "\nEmployer: Data not available";
+            return "Data not available";
         }
-        return "\nEmployer: " + value;
+        return value;
     }
 
     @Override

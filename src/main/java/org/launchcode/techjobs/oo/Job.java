@@ -58,7 +58,7 @@ public class Job {
         if(this.name == ""){
             this.name = "Data not available";
         }
-        return "\nName: " + this.name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -103,7 +103,7 @@ public class Job {
 
     public String toString() {
 
-        return "\nID: " + this.getId() + this.getName() + this.getEmployer() + this.getLocation() + this.getPositionType() + this.getCoreCompetency() + "\n";
+        return "\nID: " + this.getId() + "\nName: " + this.getName() + "\nEmployer: " + this.getEmployer() + "\nLocation: " + this.getLocation() + "\nPosition Type: " + this.getPositionType() + "\nCore Competency: " + this.getCoreCompetency() + "\n";
     }
 
 }

@@ -22,9 +22,9 @@ public class PositionType {
 
     public String toString(){
         if(this.value == ""){
-            return "\nPosition Type: Data not available";
+            return "Data not available";
         }
-        return "Position Type: " + value;
+        return value;
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two PositionType objects "equal" when
